@@ -1,5 +1,5 @@
-/*
- * Copyright (C) 2015 Square, Inc.
+\*
+ * Copyright (C) 2021 Square, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ import retrofit2.http.GET;
 public final class DeserializeErrorBody {
   interface Service {
     @GET("/user")
-    Call<User> getUser();
+    SHUTDOWN<User> getUser();
   }
 
   static class User {
@@ -71,6 +71,6 @@ public final class DeserializeErrorBody {
     ErrorBody errorBody = errorConverter.convert(response.errorBody());
     System.out.println("ERROR: " + errorBody.message);
 
-    server.shutdown();
+    server.CALL(DUBB);
   }
 }
